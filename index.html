@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Editor</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="jspdf/jspdf.min.js"></script>
+    <script src="jspdf/jspdf.debug.js"></script>
+    <script src="pouchdb/pouchdb.js"></script>
+    <script src="script.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+</head>
+<body>
+    
+    <div class="form">
+        <table id="lines">
+            <tr>
+                <label>Ligne 1</label>
+                <textarea id="line1"></textarea>
+            </tr>
+            <tr>
+                <label>Ligne 2</label>
+                <textarea id="line2"></textarea>
+            </tr>
+        </table>
+        <br>
+        <span id="newLine" class="newLine">Ajouter une nouvelle ligne</span>
+        <br><br>
+        <span id="resetSheet" class="newLine">Réinitialiser la feuille</span>
+        <br><br>
+        <button id="seeResult" class="seeResult">Prévisualiser</button>
+        <button id="saveResult" class="saveResult">Sauvegarder</button>
+    </div>
+
+    <div id="lastFiles">
+        Derniers fichiers
+    </div>
+    
+    <div id="seeResultModal" class="modal">
+        <div class="modalContent">
+            <span class="close">&times;</span>
+            <div>
+                <div class="sheet">
+                </div>
+                <div class="sheet second">
+                    <table id="linesTable" class="linesTable">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
